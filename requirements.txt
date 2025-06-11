@@ -1,0 +1,8 @@
+streamlit
+pandas
+altair
+pydeck
+scikit-learn
+numpy
+plotly
+supabase-py
