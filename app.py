@@ -569,7 +569,8 @@ for tipo in df_disasters["type"].unique():
     X = df_tipo[["year", "month"]]
     y = df_tipo["ocorrencias"]
 
-    modelo = RandomForestRegressor(n_estimators=100, random_state=42)
+    modelo = LinearRegression()
+
     modelo.fit(X, y)
 
     df_futuro = pd.DataFrame({"year": meses_futuros.year, "month": meses_futuros.month})
@@ -599,7 +600,7 @@ for (municipio, tipo), grupo in df_historico_mun.groupby(["municipality", "type"
         X = grupo[["year", "month"]]
         y = grupo["ocorrencias"]
 
-        modelo = RandomForestRegressor(n_estimators=100, random_state=42)
+        modelo = LinearRegression()
         modelo.fit(X, y)
 
         df_futuro = pd.DataFrame({"year": meses_futuros.year, "month": meses_futuros.month})
